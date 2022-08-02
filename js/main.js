@@ -37,4 +37,21 @@ function hoverCheckboxOut(index){
 
 // hover checkbox stop
 //==============================================
+// animation input range start
+
+const range = document.querySelector("#range_sliders");
+const HTMLvalue = document.querySelector("#value");
+
+range.addEventListener("input", ()=>{handleInputChange()})
+
+function handleInputChange(){
+    var value = range.value;
+    var max = range.max;
+    var min = range.min;
+
+    range.style.backgroundSize = (value - min) * 100 / (max - min) + '% 100%';
+    HTMLvalue.textContent = value;
+}
+// animation input range stop
+
 

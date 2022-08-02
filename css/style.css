@@ -93,7 +93,7 @@ h2{
     align-items: center;
 }
 
-#div_range_sliders > div > p{
+#value{
     font-family: 'Outfit', sans-serif;
     font-weight: 400;
     font-size: .6771vw;
@@ -101,7 +101,10 @@ h2{
     color: #FEF8EA;
     border: #424357 2px solid;
     border-radius: 5px;
-    padding: .3646vw .6771vw;
+    width: 2.0833vw;
+    height: 1.5625vw;
+    text-align: center;
+    padding-top: .5208vw;
 }
 
 /* range-slider start */
@@ -114,7 +117,7 @@ input[type="range"] {
     background: #3D3A49;
     border-radius: 5px;
     background-image: linear-gradient(#FEF9ED, #FDD881);
-    background-size: 70% 100%;
+    background-size: 40% 100%;
     background-repeat: no-repeat;
   }
   
