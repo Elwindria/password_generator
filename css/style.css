@@ -4,4 +4,7 @@ body{
     box-sizing:border-box;
 }
 
-
+svg{
+    width: 70px;
+    height: 70px;
+}
