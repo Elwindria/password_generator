@@ -12,6 +12,7 @@ const special = document.querySelector("#special");
 // ============================================
 // Hover checkbox start
 
+// initialisation addEvent pour les checkbox
 checkboxs.forEach((box, index) => {
     box.addEventListener("click", ()=>{hoverCheckboxOut(index)})
     box.addEventListener("click", ()=>{hoverCheckbox(index)})
@@ -19,14 +20,14 @@ checkboxs.forEach((box, index) => {
     box.addEventListener("mouseout", ()=>{hoverCheckboxOut(index)})
 });
 
-// change background color when mouseenter and checked
+// Hover
 function hoverCheckbox(index){
     if (checkboxs[index].checked){
         checkmarks[index].style.backgroundColor = "#FEFAF0";
     }
 }
 
-// change background color when mouseout, yellow or black if checked => true/false
+// Hover off
 function hoverCheckboxOut(index){
     if (checkboxs[index].checked){
         checkmarks[index].style.backgroundColor = "#F7DA84";
@@ -122,7 +123,7 @@ function copy(){
     //initialisation du string à copier
     var stringToCopy = passwordResult.value;
 
-    if (stringToCopy != "New password here" && stringToCopy != "Check at least one option"){
+    if (stringToCopy != "New password here"){
         navigator.clipboard.writeText(stringToCopy);
         messageSuccesCopy.style;opacity = "1";
     }
