@@ -53,5 +53,76 @@ function handleInputChange(){
     HTMLvalue.textContent = value;
 }
 // animation input range stop
+// =======================================
+// Generator Password start ! 
 
+// Utilisation des const All
+const buttonGeneratePassword = document.querySelector("#button_generate");
+const passwordResult = document.querySelector("#password_input");
+const messageSuccesCopy = document.querySelector("#div_succes");
 
+//activation de la génération
+buttonGeneratePassword.addEventListener("click", ()=>{generatorPassword()});
+
+function generatorPassword(){
+
+    //rénitialisation de la dernière génération
+    messageSuccesCopy.style.display = "none";
+    passwordResult.value = "";
+    var result = "";
+    var characters = "";
+
+    //initialisation de la longueur du mot de passe
+    var lengthPassword = range.value;
+
+    //Initialisation des options
+    if (numbers.checked){
+        var characters = characters+"0123456789";
+    }
+    if (lowercase.checked){
+        var characters = characters+"abcdefghijklmnopqrstuvwxyz";
+    }
+    if (uppercase.checked){
+        var characters = characters+"ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    }
+    if (special.checked){
+        var characters = characters+"!#$%&()*+,-./:;<=>?@[]^_`{|}~";
+    }
+
+    //Si aucune option choisi alors envoyer un message
+    if (!numbers.checked && !lowercase.checked && !uppercase.checked && !special.checked) {
+        passwordResult.value = "Check at least one option";
+        return;
+    }
+
+    var charactersLength = characters.length;
+
+    //création du mot de passe
+    for ( var i = 0; i < lengthPassword; i++ ) {
+        result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+
+    //affichage de la génération
+    passwordResult.value = result;
+}
+
+//generator Password stop
+//=======================================
+// Copy result generator start
+
+const buttonCopy = document.querySelector("#button_copy");
+
+buttonCopy.addEventListener("click", ()=>{copy()});
+
+function copy(){
+
+    //initialisation du string à copier
+    var stringToCopy = passwordResult.value;
+
+    if (stringToCopy != "New password here" && stringToCopy != "Check at least one option"){
+        navigator.clipboard.writeText(stringToCopy);
+        messageSuccesCopy.style.display = "unset";
+    }
+}
+
+// Copy result generator stop
