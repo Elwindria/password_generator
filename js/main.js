@@ -60,6 +60,7 @@ function handleInputChange(){
 const buttonGeneratePassword = document.querySelector("#button_generate");
 const passwordResult = document.querySelector("#password_input");
 const messageSuccesCopy = document.querySelector("#div_succes");
+const messageSuccesCopyP = document.querySelector("#succes");
 
 //activation de la génération
 buttonGeneratePassword.addEventListener("click", ()=>{generatorPassword()});
@@ -67,8 +68,9 @@ buttonGeneratePassword.addEventListener("click", ()=>{generatorPassword()});
 function generatorPassword(){
 
     //rénitialisation de la dernière génération
-    messageSuccesCopy.style.display = "none";
-    passwordResult.value = "";
+    messageSuccesCopyP.textContent = "Successfully copied !"
+    messageSuccesCopy.style.opacity = "0";
+    passwordResult.value = "New password here";
     var result = "";
     var characters = "";
 
@@ -91,7 +93,8 @@ function generatorPassword(){
 
     //Si aucune option choisi alors envoyer un message
     if (!numbers.checked && !lowercase.checked && !uppercase.checked && !special.checked) {
-        passwordResult.value = "Check at least one option";
+        messageSuccesCopyP.textContent = "Check at least one option";
+        messageSuccesCopy.style.opacity = "1";
         return;
     }
 
@@ -121,7 +124,7 @@ function copy(){
 
     if (stringToCopy != "New password here" && stringToCopy != "Check at least one option"){
         navigator.clipboard.writeText(stringToCopy);
-        messageSuccesCopy.style.display = "unset";
+        messageSuccesCopy.style;opacity = "1";
     }
 }
 
