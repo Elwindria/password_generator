@@ -122,7 +122,7 @@ input[type="range"] {
     background-repeat: no-repeat;
   }
   
-  input[type="range"]::-webkit-slider-thumb {
+  input[type="range"]::-webkit-slider-thumb{
     -webkit-appearance: none;
     height: 1.0417vw;
     width: 1.0417vw;
@@ -131,8 +131,17 @@ input[type="range"] {
     cursor: ew-resize;
     box-shadow: 0 0 2px 0 #555;
   }
+
+  input[type=range]::-moz-range-thumb{
+    height: 1.0417vw;
+    width: 1.0417vw;
+    border-radius: 50%;
+    background: #F7DA84;
+    cursor: ew-resize;
+    box-shadow: 0 0 2px 0 #555;
+  }
   
-  input[type=range]::-webkit-slider-runnable-track  {
+  input[type=range]::-webkit-slider-runnable-track{
     -webkit-appearance: none;
     box-shadow: none;
     border: none;
@@ -353,6 +362,10 @@ input[type="range"] {
 input[type="range"]::-webkit-slider-thumb:hover{
     background: #FEFAF0;
 }
+
+input[type="range"]::-moz-range-thumb:hover{
+    background-color: #FEFAF0;
+}
 /*check Js for other hover like checkbox or range-slider
 
 /* all hover end */
@@ -511,7 +524,12 @@ input[type="range"]::-webkit-slider-thumb:hover{
     input[type="range"]::-webkit-slider-thumb {
         height: 4vw;
         width: 4vw;
-      }
+    }
+
+    input[type="range"]::-moz-range-thumb {
+        height: 4vw;
+        width: 4vw;
+    }
 
     /* font */
     h1{
@@ -647,7 +665,7 @@ input[type="range"]::-webkit-slider-thumb:hover{
 
     #button_generate{
     width: 50vw;
-    height: 6vw;
+    height: 8vw;
     margin-bottom: 4vw;
     }
 
