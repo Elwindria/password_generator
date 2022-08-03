@@ -125,7 +125,7 @@ function copy(){
 
     if (stringToCopy != "New password here"){
         navigator.clipboard.writeText(stringToCopy);
-        messageSuccesCopy.style;opacity = "1";
+        messageSuccesCopy.style.opacity = "1";
     }
 }
 
